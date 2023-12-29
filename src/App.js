@@ -11,22 +11,12 @@ function App() {
     const newBucketList = [...bucketList1];
     newBucketList[index].checked = !newBucketList[index].checked;
     console.log("newBuckerList", newBucketList);
-    newBucketList.forEach((item, idx) => {
-      if(index !==idx){
-        item.checked = false;
-      }
-    })
     setBucketList1(newBucketList);
   };
 
   const bucketList2Handler = (index) => {
     const newBucketList = [...bucketList2];
     newBucketList[index].checked = !newBucketList[index].checked;
-    newBucketList.forEach((item, idx) => {
-      if(index !==idx){
-        item.checked = false;
-      }
-    })
     setBucketList2(newBucketList);
   };
 
