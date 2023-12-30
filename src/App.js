@@ -26,13 +26,20 @@ function App() {
     
     const checkedItemsBucketList2 = bucketList2.filter((item) => item.checked);
     const uncheckedItemsBucketList2 = bucketList2.filter((item) => !item.checked);
-
+    
     let newBucketList;
     if(direction === "Down"){
+      checkedItemsBucketList1.forEach((item) => {
+        item.checked = false;
+      });
       newBucketList = [...bucketList2, ...checkedItemsBucketList1];
       setBucketList2(newBucketList);
       setBucketList1([...uncheckedItemsBucketList1]);
     }else{
+      checkedItemsBucketList2.forEach((item) => {
+        item.checked = false;
+      });
+      console.log("checkedItemsBucketList2", checkedItemsBucketList2);
       newBucketList = [...bucketList1, ...checkedItemsBucketList2];
       setBucketList1(newBucketList);
       setBucketList2(uncheckedItemsBucketList2);
